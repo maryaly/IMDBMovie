@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/moviesFragment">
+
+    <fragment
+        android:id="@+id/addMovieFragment"
+        android:name="com.mary.imdbmovie.presentation.ui.SearchFragment">
+        <action
+            android:id="@+id/action_addMovieFragment_to_moviesFragment"
+            app:destination="@id/moviesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/posterFragment"
+        android:name="com.mary.imdbmovie.presentation.ui.PosterFragment">
+        <action
+            android:id="@+id/action_posterFragment_to_moviesFragment"
+            app:destination="@id/moviesFragment" />
+        <argument
+            android:name="poster"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="com.mary.imdbmovie.presentation.ui.MoviesFragment">
+        <action
+            android:id="@+id/action_moviesFragment_to_posterFragment"
+            app:destination="@id/posterFragment" />
+        <action
+            android:id="@+id/action_moviesFragment_to_addMovieFragment"
+            app:destination="@id/addMovieFragment" />
+
+    </fragment>
+</navigation>

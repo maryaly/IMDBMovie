@@ -1,0 +1,15 @@
+package com.mary.imdbmovie.data.remote.model
+
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
+data class MovieResultDto(
+
+        @Json(name = "Search")
+        val search: List<MovieDto>? = null,
+
+        @Json(name = "Response")
+        val response: String? = null
+
+)
